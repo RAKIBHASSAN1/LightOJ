@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+long long int t,k=0;
+cin>>t;
+while(t--)
+{
+    k++;
+   long long int n,m,k1;
+   cin>>n>>m;
+   k1=(m*n)/2;
+cout<<"Case "<<k<<": "<<k1<<endl;
+
+}
+
+
+
+}
