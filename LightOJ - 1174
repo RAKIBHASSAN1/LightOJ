@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test,n,m,u,v,test1=0,s,d;
+    cin>>test;
+    while(test--)
+    {
+       int sum;
+        test1++;
+        cin>>n>>m;
+        int jun[210][210]={100000};
+        for(int i=0;i<210;i++)
+        {
+            for(int j=0;j<210;j++)
+            {
+                if(i==j)
+                    jun[i][j]=0;
+                else
+                    jun[i][j]=100000;
+            }
+        }
+       for(int i=0;i<m;i++)
+        {
+            cin>>u>>v;
+
+                jun[u][v]=1;
+                jun[v][u]=1;
+
+        }
+        for(int k=0;k<n;k++)
+        {
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                     sum=jun[i][k]+jun[k][j];
+                     if(sum<jun[i][j])
+                        {
+                             jun[i][j]=sum;
+                        }
+                    
+                }
+            }
+        }
+        cin>>s>>d;
+        int sum1=0;
+        for(int i=0;i<n;i++)
+        {
+           sum1=max(sum1,jun[s][i]+jun[i][d]);
+        }
+        cout<<"Case "<<test1<<": "<<sum1<<endl;
+
+    }
+    return 0;
+}
