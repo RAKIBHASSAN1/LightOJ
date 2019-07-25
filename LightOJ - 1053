@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,pn=0,p,q,r;
+    cin>>t;
+    int a[3];
+    while(t--)
+    {
+        pn++;
+        cin>>p>>q>>r;
+        a[0]=p;
+        a[1]=q;
+        a[2]=r;
+        sort(a,a+3);
+        if((a[0]*a[0]+a[1]*a[1])==(a[2]*a[2]))
+        {
+            cout<<"Case "<<pn<<": "<<"yes"<<endl;
+        }
+        else
+        {
+            cout<<"Case "<<pn<<": "<<"no"<<endl;
+        }
+    }
+}
