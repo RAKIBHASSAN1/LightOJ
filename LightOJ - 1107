@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int i,i1,j,t,x1,x2,y1,y2,rect,x,y,m;
+cin>>t;
+for(j=1;j<=t;j++)
+{
+cin>>x1>>y1>>x2>>y2;
+cin>>m;
+printf("Case %d:\n",j);
+for(i=1;i<=m;i++)
+{
+scanf("%d%d",&x,&y);
+if((x>=x1 && x<=x2)&&(y>=y1 && y<=y2))
+printf("Yes\n");
+else
+printf("No\n");
+
+
+}
+}
+}
