@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int t,k=0;
+cin>>t;
+while(t--)
+{
+    k++;
+int a1,a2,b1,b2,c1,c2,d1,d2;
+cin>>a1>>a2>>b1>>b2>>c1>>c2;
+d1=a1+c1-b1;
+d2=a2+c2-b2;
+int k1,k2,k3;
+k1 = a1 * b2 + b1 * c2 + c1 * d2 + d1 * a2;
+k2 = a2 * b1 + b2 * c1 + c2 * d1 + d2 * a1;
+
+k3 = abs(k1 - k2);
+k3 = k3 / 2;
+cout<<"Case "<<k<<": "<<d1<<" "<<d2<<" "<<k3<<endl;
+
+}
+
+
+
+}
