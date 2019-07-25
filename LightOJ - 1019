@@ -1,0 +1,47 @@
+include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test,n,m,u,v,w,test1=0;
+    cin>>test;
+    while(test--)
+    {
+        test1++;
+        cin>>n>>m;
+        int jun[210][210]={100000};
+        for(int i=0;i<210;i++)
+        {
+            for(int j=0;j<210;j++)
+            {
+                if(i==j)
+                    jun[i][j]=0;
+                else
+                    jun[i][j]=100000;
+            }
+        }
+       for(int i=0;i<m;i++)
+        {
+            cin>>u>>v>>w;
+
+                jun[u-1][v-1]=min(jun[u-1][v-1],w);
+                jun[v-1][u-1]=min(jun[v-1][u-1],w);
+
+        }
+        for(int k=0;k<n;k++)
+        {
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                    jun[i][j]=min(jun[i][j],jun[i][k]+jun[k][j]);
+                }
+            }
+        }
+        if(jun[0][n-1]==100000)
+            cout<<"Case "<<test1<<": Impossible"<<endl;
+        else
+            cout<<"Case "<<test1<<": "<<jun[0][n-1]<<endl;
+
+    }
+    return 0;
+}
