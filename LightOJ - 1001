@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,index,u,number;
+    int a[50]={0};
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        if(n==0)
+        {
+            cout<<"0 0"<<endl;
+        }
+        else if(n==20)
+        {
+            cout<<"10 10"<<endl;
+        }
+
+        else if(n<11)
+        {
+
+            cout<<a[n]<<" "<<abs(n-a[n])<<endl;
+            a[n]++;
+        }
+        else
+        {
+            u=10-a[n];
+            cout<<u<<" "<<abs(n-u)<<endl;
+        }
+    }
+    return 0;
+}
